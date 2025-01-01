@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - Content Analyzer Pro</title>
+    <meta name="description" content="Complete documentation for Content Analyzer Pro. Learn how to install, configure, and use all features of our SEO analysis tool.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <a href="/" class="logo">Content Analyzer Pro</a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="../#features">Features</a>
+                <a href="../#pricing">Pricing</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="docs">
+        <div class="container docs-content">
+            <h1>Content Analyzer Pro Documentation</h1>
+            
+            <h2>Installation</h2>
+            <p>To install Content Analyzer Pro, ensure you have Python 3.8 or higher installed, then follow these steps:</p>
+            <pre><code>pip install requests beautifulsoup4 pandas</code></pre>
+            <p>Download the content_analyzer.py script and place it in your project directory.</p>
+
+            <h2>Quick Start</h2>
+            <p>Analyze a website with a single command:</p>
+            <pre><code>python content_analyzer.py https://example.com</code></pre>
+
+            <h2>Features</h2>
+            
+            <h3>SEO Analysis</h3>
+            <p>The tool performs comprehensive SEO analysis including:</p>
+            <ul>
+                <li>Meta title and description validation</li>
+                <li>Heading structure analysis</li>
+                <li>Content length assessment</li>
+                <li>Keyword density calculation</li>
+            </ul>
+
+            <h3>Content Analysis</h3>
+            <p>Get detailed insights about your content:</p>
+            <ul>
+                <li>Total word count</li>
+                <li>Unique words used</li>
+                <li>Average word length</li>
+                <li>Top keywords and their frequency</li>
+            </ul>
+
+            <h3>API Reference</h3>
+            <p>The ContentAnalyzer class provides the following main methods:</p>
+            <pre><code>analyzer = ContentAnalyzer()
+analyzer.load_url(url)      # Load and parse a URL
+analyzer.analyze_metadata() # Get metadata analysis
+analyzer.analyze_content()  # Get content analysis
+analyzer.generate_recommendations(analysis) # Get recommendations</code></pre>
+
+            <h2>Sample Output</h2>
+            <p>The tool generates JSON output in the following format:</p>
+            <pre><code>{
+  "analysis": {
+    "total_words": 500,
+    "unique_words": 300,
+    "top_keywords": [...],
+    "avg_word_length": 5.2,
+    "metadata": {
+      "title": "Page Title",
+      "description": "Meta Description",
+      "h1_count": 1,
+      "h1_text": ["Main Heading"]
+    }
+  },
+  "recommendations": [
+    "Add a meta description",
+    "Increase content length",
+    "Optimize keyword density"
+  ]
+}</code></pre>
+
+            <h2>Integration Guide</h2>
+            <p>To integrate Content Analyzer Pro into your existing Python projects:</p>
+            <pre><code>from content_analyzer import analyze_url
+
+result = analyze_url("https://example.com")
+data = json.loads(result)
+
+# Access analysis results
+analysis = data["analysis"]
+recommendations = data["recommendations"]</code></pre>
+
+            <h2>Best Practices</h2>
+            <ul>
+                <li>Analyze URLs one at a time to ensure accurate results</li>
+                <li>Implement recommended changes gradually</li>
+                <li>Re-analyze after making significant content changes</li>
+                <li>Keep the tool updated to access new features</li>
+            </ul>
+
+            <h2>Support</h2>
+            <p>For technical support or feature requests, please visit our GitHub repository or contact our support team.</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Content Analyzer Pro. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
